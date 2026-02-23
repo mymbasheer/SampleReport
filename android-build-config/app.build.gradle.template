@@ -1,0 +1,32 @@
+// ─────────────────────────────────────────────────────────────────────────────
+// android/app/build.gradle — Reference template
+// After running `expo prebuild`, your android/app/build.gradle will be auto-generated.
+// The SIGNED RELEASE section below shows what to add for a properly signed APK.
+// ─────────────────────────────────────────────────────────────────────────────
+
+// ADD THIS inside the `android { ... }` block in android/app/build.gradle:
+
+/*
+    signingConfigs {
+        release {
+            if (project.hasProperty('MYAPP_RELEASE_STORE_FILE')) {
+                storeFile file(MYAPP_RELEASE_STORE_FILE)
+                storePassword MYAPP_RELEASE_STORE_PASSWORD
+                keyAlias MYAPP_RELEASE_KEY_ALIAS
+                keyPassword MYAPP_RELEASE_KEY_PASSWORD
+            }
+        }
+    }
+
+    buildTypes {
+        release {
+            signingConfig signingConfigs.release   // <-- add this line
+            minifyEnabled true
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+*/
+
+// NOTE: If you don't add signing config, the APK will be an unsigned debug build
+// which still works fine for direct installation — just can't be uploaded to Play Store.
